@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class Reguistro_Mercado extends javax.swing.JFrame {
     
     LinkedList<Cls_Candidatos> candidatos = new LinkedList<>();
-    boolean sw;
+    boolean sw,sw2;
     int posicion;
     public Reguistro_Mercado() {
         initComponents();
@@ -57,16 +57,42 @@ public class Reguistro_Mercado extends javax.swing.JFrame {
         btn_guardar = new javax.swing.JButton();
         btn_borrar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        lbid = new javax.swing.JLabel();
+        txtid_consulta = new javax.swing.JTextField();
+        btn_consultar_consultas = new javax.swing.JButton();
+        btn_borrar_consultas = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        lbnombre = new javax.swing.JLabel();
+        txtnombre_consulta = new javax.swing.JTextField();
+        lbapallido = new javax.swing.JLabel();
+        txtapellido_consulta = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
+        lbnumero = new javax.swing.JLabel();
+        txtnumero_consulta = new javax.swing.JTextField();
+        lbcorreo = new javax.swing.JLabel();
+        txtcorreo_consulta = new javax.swing.JTextField();
+        lbsexo = new javax.swing.JLabel();
+        txtsexo_consulta = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        lbperfil = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txaperfil_consulta = new javax.swing.JTextArea();
+        lbestudios = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txaestudios_consulta = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBackground(new java.awt.Color(227, 242, 253));
 
         jInternalFrame1.setBackground(new java.awt.Color(255, 255, 255));
+        jInternalFrame1.setOpaque(true);
         jInternalFrame1.setVisible(true);
 
-        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setForeground(new java.awt.Color(153, 153, 153));
         jTabbedPane1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
 
@@ -82,7 +108,7 @@ public class Reguistro_Mercado extends javax.swing.JFrame {
         jPanel1.add(txtid_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 97, 220, 31));
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel2.setText("iniciar registro");
+        jLabel2.setText("Iniciar registro");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 32, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
@@ -140,6 +166,7 @@ public class Reguistro_Mercado extends javax.swing.JFrame {
 
         txaestudios_registro.setColumns(20);
         txaestudios_registro.setRows(5);
+        txaestudios_registro.setOpaque(false);
         jScrollPane2.setViewportView(txaestudios_registro);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 220, 100));
@@ -157,7 +184,7 @@ public class Reguistro_Mercado extends javax.swing.JFrame {
         });
         jPanel1.add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, 100, 40));
 
-        btn_borrar.setBackground(new java.awt.Color(8, 107, 140));
+        btn_borrar.setBackground(new java.awt.Color(219, 84, 97));
         btn_borrar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         btn_borrar.setForeground(new java.awt.Color(255, 255, 255));
         btn_borrar.setText("Borrar");
@@ -173,17 +200,254 @@ public class Reguistro_Mercado extends javax.swing.JFrame {
         jTabbedPane1.addTab("reguistros", jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(0, 207, 224));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 814, Short.MAX_VALUE)
+        jLabel11.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel11.setText("Consultar");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 32, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        lbid.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lbid.setText("ID");
+
+        txtid_consulta.setBackground(new java.awt.Color(204, 204, 204));
+        txtid_consulta.setForeground(new java.awt.Color(255, 255, 255));
+        txtid_consulta.setBorder(null);
+        txtid_consulta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtid_consulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtid_consultaActionPerformed(evt);
+            }
+        });
+
+        btn_consultar_consultas.setBackground(new java.awt.Color(8, 107, 140));
+        btn_consultar_consultas.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btn_consultar_consultas.setForeground(new java.awt.Color(255, 255, 255));
+        btn_consultar_consultas.setText("consultar");
+        btn_consultar_consultas.setBorder(null);
+        btn_consultar_consultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_consultar_consultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultar_consultasActionPerformed(evt);
+            }
+        });
+
+        btn_borrar_consultas.setBackground(new java.awt.Color(219, 84, 97));
+        btn_borrar_consultas.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btn_borrar_consultas.setForeground(new java.awt.Color(255, 255, 255));
+        btn_borrar_consultas.setText("Borrar");
+        btn_borrar_consultas.setBorder(null);
+        btn_borrar_consultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_borrar_consultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_borrar_consultasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(lbid, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(txtid_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btn_consultar_consultas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_borrar_consultas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(lbid, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtid_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_consultar_consultas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_borrar_consultas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 250, 110));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        lbnombre.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lbnombre.setText("nombre:");
+
+        txtnombre_consulta.setEditable(false);
+        txtnombre_consulta.setBackground(new java.awt.Color(138, 162, 158));
+        txtnombre_consulta.setForeground(new java.awt.Color(255, 255, 255));
+        txtnombre_consulta.setBorder(null);
+
+        lbapallido.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lbapallido.setText("apellido:");
+
+        txtapellido_consulta.setEditable(false);
+        txtapellido_consulta.setBackground(new java.awt.Color(138, 162, 158));
+        txtapellido_consulta.setForeground(new java.awt.Color(255, 255, 255));
+        txtapellido_consulta.setBorder(null);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbapallido)
+                    .addComponent(txtapellido_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbnombre)
+                    .addComponent(txtnombre_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(lbnombre)
+                .addGap(1, 1, 1)
+                .addComponent(txtnombre_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lbapallido)
+                .addGap(11, 11, 11)
+                .addComponent(txtapellido_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 250, 150));
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+
+        lbnumero.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lbnumero.setText("numero de telefono:");
+
+        txtnumero_consulta.setEditable(false);
+        txtnumero_consulta.setBackground(new java.awt.Color(138, 162, 158));
+        txtnumero_consulta.setForeground(new java.awt.Color(255, 255, 255));
+        txtnumero_consulta.setBorder(null);
+
+        lbcorreo.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lbcorreo.setText("correo:");
+
+        txtcorreo_consulta.setEditable(false);
+        txtcorreo_consulta.setBackground(new java.awt.Color(138, 162, 158));
+        txtcorreo_consulta.setForeground(new java.awt.Color(255, 255, 255));
+        txtcorreo_consulta.setBorder(null);
+
+        lbsexo.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lbsexo.setText("sexo:");
+
+        txtsexo_consulta.setEditable(false);
+        txtsexo_consulta.setBackground(new java.awt.Color(138, 162, 158));
+        txtsexo_consulta.setForeground(new java.awt.Color(255, 255, 255));
+        txtsexo_consulta.setBorder(null);
+
+        jLabel12.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel12.setText("Extras");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbnumero)
+                    .addComponent(txtnumero_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbcorreo)
+                    .addComponent(txtcorreo_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbsexo)
+                    .addComponent(txtsexo_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lbnumero)
+                .addGap(11, 11, 11)
+                .addComponent(txtnumero_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lbcorreo)
+                .addGap(1, 1, 1)
+                .addComponent(txtcorreo_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lbsexo)
+                .addGap(1, 1, 1)
+                .addComponent(txtsexo_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+        );
+
+        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 240, 270));
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+
+        lbperfil.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lbperfil.setText("perfil profecional");
+
+        txaperfil_consulta.setEditable(false);
+        txaperfil_consulta.setBackground(new java.awt.Color(255, 255, 255));
+        txaperfil_consulta.setColumns(20);
+        txaperfil_consulta.setRows(5);
+        jScrollPane4.setViewportView(txaperfil_consulta);
+
+        lbestudios.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lbestudios.setText("estudios realizados");
+
+        txaestudios_consulta.setEditable(false);
+        txaestudios_consulta.setBackground(new java.awt.Color(227, 242, 253));
+        txaestudios_consulta.setColumns(20);
+        txaestudios_consulta.setRows(5);
+        txaestudios_consulta.setOpaque(false);
+        jScrollPane3.setViewportView(txaestudios_consulta);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(5, 5, 5)
+                            .addComponent(lbperfil))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lbestudios)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbperfil)
+                .addGap(9, 9, 9)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbestudios)
+                .addGap(1, 1, 1)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, -1, -1));
 
         jTabbedPane1.addTab("consultas", jPanel2);
 
@@ -198,7 +462,7 @@ public class Reguistro_Mercado extends javax.swing.JFrame {
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
         );
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
@@ -299,6 +563,49 @@ public class Reguistro_Mercado extends javax.swing.JFrame {
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
         fn_guardar();
     }//GEN-LAST:event_btn_guardarActionPerformed
+    
+    private void fn_consutar(){
+        for(int i=0;i<candidatos.size();i++){
+            if (candidatos.get(i).getIdCl()==Integer.parseInt(txtid_consulta.getText())){
+                posicion = i;
+                sw2 = true;
+                break;
+            }
+            if (sw2 == false){
+            JOptionPane.showMessageDialog(null, "No se encontraron registros","ERROR",
+                    JOptionPane.ERROR_MESSAGE);
+            }else{
+                txtnombre_consulta.setText("" + candidatos.get(posicion).getNombreCl());
+                txtapellido_consulta.setText("" + candidatos.get(posicion).getApellidoCl());
+                txtnumero_consulta.setText("" + candidatos.get(posicion).getNumerocontactoCl());
+                txtcorreo_consulta.setText("" + candidatos.get(posicion).getCorreoCl());
+                txtsexo_consulta.setText("" + candidatos.get(posicion).getSexoCl());
+                txaperfil_consulta.setText("" + candidatos.get(posicion).getPerfilProCl());
+                txaestudios_consulta.setText("" + candidatos.get(posicion).getEstudiosCl());
+            }
+            
+        }
+    }
+    
+    private void btn_borrar_consultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrar_consultasActionPerformed
+        txtid_consulta.setText("");
+        txtnombre_consulta.setText("");
+        txtapellido_consulta.setText("");
+        txtnumero_consulta.setText("");
+        txtcorreo_consulta.setText("");
+        txtsexo_consulta.setText("");
+        txaestudios_consulta.setText("");
+        txaperfil_consulta.setText("");
+        txtid_consulta.requestFocus();
+    }//GEN-LAST:event_btn_borrar_consultasActionPerformed
+
+    private void txtid_consultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtid_consultaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtid_consultaActionPerformed
+
+    private void btn_consultar_consultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultar_consultasActionPerformed
+        fn_consutar();
+    }//GEN-LAST:event_btn_consultar_consultasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -337,10 +644,14 @@ public class Reguistro_Mercado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_borrar;
+    private javax.swing.JButton btn_borrar_consultas;
+    private javax.swing.JButton btn_consultar_consultas;
     private javax.swing.JButton btn_guardar;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -351,17 +662,39 @@ public class Reguistro_Mercado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lbapallido;
+    private javax.swing.JLabel lbcorreo;
+    private javax.swing.JLabel lbestudios;
+    private javax.swing.JLabel lbid;
+    private javax.swing.JLabel lbnombre;
+    private javax.swing.JLabel lbnumero;
+    private javax.swing.JLabel lbperfil;
+    private javax.swing.JLabel lbsexo;
+    private javax.swing.JTextArea txaestudios_consulta;
     private javax.swing.JTextArea txaestudios_registro;
+    private javax.swing.JTextArea txaperfil_consulta;
     private javax.swing.JTextArea txaperfil_registro;
+    private javax.swing.JTextField txtapellido_consulta;
     private javax.swing.JTextField txtapellido_registro;
+    private javax.swing.JTextField txtcorreo_consulta;
     private javax.swing.JTextField txtcorreo_registro;
+    private javax.swing.JTextField txtid_consulta;
     private javax.swing.JTextField txtid_registro;
+    private javax.swing.JTextField txtnombre_consulta;
     private javax.swing.JTextField txtnombre_registro;
+    private javax.swing.JTextField txtnumero_consulta;
     private javax.swing.JTextField txtnumero_registro;
+    private javax.swing.JTextField txtsexo_consulta;
     private javax.swing.JTextField txtsexo_registro;
     // End of variables declaration//GEN-END:variables
 }
